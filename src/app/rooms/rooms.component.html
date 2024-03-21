@@ -1,0 +1,31 @@
+<!-- interpolation binding -->
+<!-- <h1>welcome to {{hotelName}}</h1> -->
+
+<app-header></app-header>
+<!-- <app-header></app-header>
+<app-header></app-header> -->
+
+<!-- property binding -->
+<div [hidden]="hideRooms">
+    <p [innerText]="numberOfRooms"></p>
+</div>
+<!-- event binding -->
+<button (click)="toggle()">Toggle</button>
+<p>rooms works!</p>
+
+
+<!-- Null coalescing operator -->
+<!-- {{rooms?.availableRooms ?? 'no rooms'}} -->
+
+
+<!-- * directives are structure based directives (can modify DOM) not attribute based directives -->
+<div *ngIf="selectedRoom">
+    {{selectedRoom | json}}
+</div>
+<div *ngIf="rooms.availableRooms > 0" [ngStyle]="{'color': rooms.availableRooms > 5 ? 'purple' : 'pink'}">
+    Rooms List:
+    <!-- {{roomList}} -->
+    <app-rooms-list [roomList]="roomList" (roomSelected)="selectsRoom($event)"></app-rooms-list>
+</div>
+
+
