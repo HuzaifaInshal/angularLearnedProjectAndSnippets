@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
 import {  CurrencyPipe, DatePipe, NgClass, NgFor, NgIf, NgStyle } from '@angular/common';
 import { RoomList } from '../rooms';
 
@@ -12,7 +12,7 @@ import { RoomList } from '../rooms';
   // on some external input/output data
   changeDetection:ChangeDetectionStrategy.OnPush
 })
-export class RoomsListComponent implements OnInit,OnChanges{
+export class RoomsListComponent implements OnInit,OnChanges,OnDestroy{
 
   // recieves state/data from parent (remember state goes down action goes up)
   @Input() roomList:RoomList[] = []
@@ -21,6 +21,11 @@ export class RoomsListComponent implements OnInit,OnChanges{
   @Output() roomSelected = new EventEmitter<RoomList>();
 
   constructor(){}
+
+  ngOnDestroy(): void {
+    console.log('Destroyeeeeeeeeeed');
+    
+  }
 
   //can only be used for components with input
   ngOnChanges(changes: SimpleChanges): void {

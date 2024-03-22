@@ -1,5 +1,16 @@
-<h1>hello world</h1>
 <app-rooms></app-rooms>
+
+
+<!-- h1 will be rendered inside app-container becoz of ng-content but if same 
+h1 placed inside app-rooms it will not render h1 && ng-content is also used to set
+order of render irrespective of what placed here it will always displayorder from 
+inside app-contiainer-->
+<!-- <app-container>
+    <h1>This is from container</h1>
+    <app-rooms></app-rooms>
+    <app-employee></app-employee>
+</app-container> -->
+
 
 
 <!-- <div [ngSwitch]="role">
@@ -12,6 +23,9 @@
     </div>
 </div> -->
 
+<!-- <div #test></div> -->
+
+<!-- ng-template is used for dynamic rendering via viewchild -->
 <!-- <div>
     <ng-template #user></ng-template>
 </div> -->

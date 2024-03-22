@@ -22,10 +22,12 @@
 <div *ngIf="selectedRoom">
     {{selectedRoom | json}}
 </div>
+
 <div *ngIf="rooms.availableRooms > 0" [ngStyle]="{'color': rooms.availableRooms > 5 ? 'purple' : 'pink'}">
+<!-- second one to check onDestroy -->
+<!-- <div *ngIf="hideRooms" [ngStyle]="{'color': rooms.availableRooms > 5 ? 'purple' : 'pink'}"> -->
     Rooms List:
     <!-- {{roomList}} -->
     <app-rooms-list [roomList]="roomList" (roomSelected)="selectsRoom($event)"></app-rooms-list>
 </div>
-
 
