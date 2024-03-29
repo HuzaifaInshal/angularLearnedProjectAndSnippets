@@ -1,4 +1,4 @@
-<button (click)="addRoom()">Add Room</button>
+
 <table class="table">
     <tr>
         <th>Index</th>
@@ -16,6 +16,7 @@
         <td>{{i.roomType}}</td>
         <td>{{i.price | currency}}</td>
         <td>{{i.checkinTime | date : 'short'}}</td>
-        <td><button class="btn btn-primary" (click)="selectRoom(i)">Select</button></td>
+        <!-- <td><button class="btn btn-primary" (click)="selectRoom(i)">Select</button></td> -->
+        <td><button class="btn btn-primary" [routerLink]="['/rooms',i.roomNumber]">Book room</button></td>
     </tr>
 </table>

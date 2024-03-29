@@ -1,0 +1,6 @@
+the topics belowe can only be implemented on ngmodule based project not on standalone project
+
+TEMPLATE DRIVEN FORMS
+FEATURE MODULING
+NESTED AND CHILD ROUTINGS
+LAZY LOADING OF A MODULE

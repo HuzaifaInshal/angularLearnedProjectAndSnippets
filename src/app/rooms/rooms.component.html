@@ -23,11 +23,22 @@
     {{selectedRoom | json}}
 </div>
 
+<h1>{{geterror$ | async}}</h1>
+<p>Number of Rooms: {{roomCount$ | async}}</p>
+
+<button (click)="addRoom()">Add Room</button>
+<button (click)="editRoom()">Update</button>
+<button (click)="delRoom()">Delete</button>
+<button (click)="getPhotos()">Get photos</button>
 <div *ngIf="rooms.availableRooms > 0" [ngStyle]="{'color': rooms.availableRooms > 5 ? 'purple' : 'pink'}">
 <!-- second one to check onDestroy -->
 <!-- <div *ngIf="hideRooms" [ngStyle]="{'color': rooms.availableRooms > 5 ? 'purple' : 'pink'}"> -->
     Rooms List:
     <!-- {{roomList}} -->
-    <app-rooms-list [roomList]="roomList" (roomSelected)="selectsRoom($event)"></app-rooms-list>
+    <!-- <app-rooms-list [roomList]="roomList" (roomSelected)="selectsRoom($event)"></app-rooms-list> -->
+    <div *ngIf="rooms$ | async as roomData">
+        <app-rooms-list [roomList]="roomData" (roomSelected)="selectsRoom($event)"></app-rooms-list>
+    </div>
 </div>
 
+<p>{{totalBytes}} loaded</p>
