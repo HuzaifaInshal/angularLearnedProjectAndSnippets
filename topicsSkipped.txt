@@ -4,3 +4,19 @@ TEMPLATE DRIVEN FORMS
 FEATURE MODULING
 NESTED AND CHILD ROUTINGS
 LAZY LOADING OF A MODULE
+ROUTE GUARDS (ROUTING EVENTS)
+REACTIVE FORMS
+CUSTOME PIPE
+
+
+
+
+THINGS YOU CAN GENERATE ON ANGULAR:
+
+module [distribute application on basis of webpack and src files multiple files for SPAs]
+guard [add routes guards/control to urls]
+service (dependency) [are classes that can be called with instances in web; are injected]
+directives [are components without template files]
+components
+interceptors
+pipe
